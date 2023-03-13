@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "parcel --dist-dir public src/mux.html",
-    "build": "parcel build --out-dir public src/mux.html"
+    "build": "parcel build src/mux.html --dist-dir public"
   },
   "dependencies": {
     "@dytesdk/react-ui-kit": "^1.43.1",
