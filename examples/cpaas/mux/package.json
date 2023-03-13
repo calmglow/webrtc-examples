@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sign": "node makeToken.js"
+  },
+  "dependencies": {
+    "@mux/spaces-web": "^1.1.1",
+    "@mux/mux-node": "^7.3.0"
+  }
+}

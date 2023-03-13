@@ -1,14 +1,14 @@
----
-name: HTML Starter
-slug: html-starter-with-analytics
-description: HTML5 template with analytics and advanced routing configuration.
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html
-relatedTemplates:
-  - nextjs-boilerplate
----
+# WebRTC의 예제 모음
+WebRTC를 기반으로 다양한 서비스들이 나옵니다. 기술 자체의 성숙도도 높아졌고 사용할 수 있는 기반 플랫폼 서비스도 많아졌습니다.
+기술이 발전해온지 10여년이 지나다보니 이제 어느 정도 서비스들의 응용 패턴이 비슷해져가고 있습니다. 1:1 아니면 1:N(방송), 혹은 다자간 회의형 서비스들이 대부분이죠. 여기에 여러 콘텐츠들이 붙으면서 차별화가 일어나고 있습니다.
+본 프로젝트에서는 이러한 WebRTC 서비스들의 유형별로 기본이 되는 예제들을 정리합니다. 가급적 소스코드를 심플하게 유지해서 재활용하거나 이해하는데 무리가 없도록 하려 합니다. 교육용 혹은 개발 참고용으로 얼마든지 복사 및 재활용 가능합니다.
 
-# HTML Starter
+# 기본
+- Simple 1 to 1
+- getUserMedia
 
-This is a starter HTML5 templates which is configured with Vercel Analytics (through a `script` tag), advanced routing with [Vercel Edge Middleware](https://vercel.com/docs/concepts/functions/edge-middleware), as well as some basic styles
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html)
+# CPaaS
+## Mux
+- Mux Meet
+## Dyte
+ - Dyte simple
