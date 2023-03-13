@@ -5,8 +5,7 @@
     "build": "parcel build src/mux.html --dist-dir public"
   },
   "dependencies": {
-    "@dytesdk/react-ui-kit": "^1.43.1",
-    "@dytesdk/react-web-core": "^1.20.1",
+    "@mux/spaces-web": "^1.1.1",
     "@vercel/edge": "^0.1.2"
   },
   "devDependencies": {
