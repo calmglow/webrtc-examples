@@ -8,6 +8,7 @@ WebRTC를 기반으로 다양한 서비스들이 나옵니다. 기술 자체의 
 - getUserMedia
 
 # CPaaS
+- Mux
 ## Mux
 - Mux Meet
 ## Dyte

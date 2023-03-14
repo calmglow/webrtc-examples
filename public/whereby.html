@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./output.css" />
+  <script src="./WebrtcExampleHeader.js"></script>
+  <script src="./WebrtcExampleFooter.js"></script>
   <title>Document</title>
 </head>
 <body>
+  <webrtc-example-header title="Whereby 예제" src="https://github.com/calmglow/webrtc-examples/blob/main/public/whereby.html"/>
+  <p>사용법: whereby에서 꼭 embedded 버전을 받아서 Room을 개설하여 participant link를 할당받으세요. 현재는 제 개인 테스트용 room입니다.</p>
   <!--
     host url: https://remotemonster.whereby.com/webrtc54b16749-83d4-4235-b5ab-af7532868c0d
   -->
   <script type=module src="https://cdn.srv.whereby.com/embed/v1.js"></script>
   <style>whereby-embed { height: 700px; }</style>
   <whereby-embed minimal room="https://remotemonster.whereby.com/webrtc54b16749-83d4-4235-b5ab-af7532868c0d"></whereby-embed>
+  <webrtc-example-footer/>
 </body>
 </html>

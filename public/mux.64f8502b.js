@@ -608,7 +608,7 @@ async function removeParticipant(participant) {
     participantsEl.removeChild(document.getElementById(participant.connectionId));
 }
 
-},{"@mux/spaces-web":"jsJmz"}],"jsJmz":[function(require,module,exports) {
+},{"@mux/spaces-web":"g2WY9"}],"g2WY9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "AcrError", ()=>C0);

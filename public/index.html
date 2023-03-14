@@ -3,19 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet">
     <title>WebRTC 예제 모음</title>
+    <script src="./WebrtcExampleFooter.js"></script>
     <meta
       name="description"
       content="WebRTC 예제 모음"
     />
   </head>
   <body>
-    <h1>WebRTC 예제 모음</h1>
-    <p>
-      WebRTC를 기반으로 다양한 서비스들이 나옵니다. 기술 자체의 성숙도도 높아졌고 사용할 수 있는 기반 플랫폼 서비스도 많아졌습니다.
-기술이 발전해온지 10여년이 지나다보니 이제 어느 정도 서비스들의 응용 패턴이 비슷해져가고 있습니다. 1:1 아니면 1:N(방송), 혹은 다자간 회의형 서비스들이 대부분이죠. 여기에 여러 콘텐츠들이 붙으면서 차별화가 일어나고 있습니다.
-본 프로젝트에서는 이러한 WebRTC 서비스들의 유형별로 기본이 되는 예제들을 정리합니다. 가급적 소스코드를 심플하게 유지해서 재활용하거나 이해하는데 무리가 없도록 하려 합니다. 교육용 혹은 개발 참고용으로 얼마든지 복사 및 재활용 가능합니다.
-    </p>
+    <div class="bg-white py-12 sm:py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+          <h2 class="text-base font-semibold leading-7 text-indigo-600">by 최진호</h2>
+          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">WebRTC 활용 서비스 예제 모음</p>
+          <p class="mt-6 text-lg leading-8 text-gray-600">WebRTC 기술이 발전해온지 10여년이 지나다보니 이제 어느 정도 서비스들의 응용 패턴이 비슷해져가고 있습니다. 1:1 아니면 1:N(방송), 혹은 다자간 회의형 서비스들이 대부분이죠. 여기에 여러 콘텐츠들이 붙으면서 차별화가 일어나고 있습니다.
+          </p>
+          <p class="mt-6 text-lg leading-8 text-gray-600">본 프로젝트에서는 이러한 WebRTC 서비스들의 유형별로 기본이 되는 예제들을 정리합니다. 가급적 소스코드를 심플하게 유지해서 재활용하거나 이해하는데 무리가 없도록 하려 합니다. 교육용 혹은 개발 참고용으로 얼마든지 복사 및 재활용 가능합니다.</p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl ">
+          <h2 class="mx-auto lg:text-left font-bold text-3xl pb-8">CPaaS (LowCode와 NoCode 중심으로)</h2>
+          <dl class="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+            <div class="relative pl-16"> <!-- -->
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-600">
+                  <img src="assets/dyte.png">
+                </div>
+                Dyte.io
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">Low-Code WebRTC CPaaS를 지향하며 개발자 친화적인 플랫폼</dd>
+              <dd class="mt-2 text-base font-bold leading-7 text-orange-700"><a href="dyte_simple.html">예제 페이지 ..</a></dd>
+            </div>
     
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-600">
+                  <img src="assets/mux.png">
+                </div>
+                Mux
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">Video기반 서비스 개발에 필요한 거의 모든 것을 제공하는 Mux는 WebRTC SDK와 Low-Code도 제공합니다.</dd>
+              <dd class="mt-2 text-base font-bold leading-7 text-orange-700"><a href="mux.html">예제 페이지 ..</a></dd>
+            </div>
+    
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-600">
+                  <img src="assets/whereby.png">
+                </div>
+                WhereBy
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">역사와 전통을 자랑하는 Whereby는 가장 안정적인 화상회의를 제공할 것입니다</dd>
+              <dd class="mt-2 text-base font-bold leading-7 text-orange-700"><a href="whereby.html">예제 페이지 ..</a></dd>
+            </div>
+    
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-600">
+                  <img src="assets/enablex.png">
+                </div>
+                EnableX
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">놀라울만큼 다양한 기능을 제공하는 EnableX는 No-code뿐 아니라 강력한 SDK도 제공합니다.</dd>
+              <dd class="mt-2 text-base font-bold leading-7 text-orange-700"><a href="enablex.html">예제 페이지 ..</a></dd>
+            </div>
+
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div class="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-600">
+                  <img src="assets/daily.png">
+                </div>
+                Daily
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">CPaaS와 no-code를 제공하며 심지어는 low-code도 준비하고 있는 떠오르는 새로운 WebRTC 플랫폼입니다</dd>
+              <dd class="mt-2 text-base font-bold leading-7 text-orange-700"><a href="daily.html">예제 페이지 ..</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <webrtc-example-footer></webrtc-example-footer>
   </body>
 </html>

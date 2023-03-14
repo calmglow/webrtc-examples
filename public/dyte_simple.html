@@ -11,28 +11,17 @@
   </script>
   <!-- Import Web Core via CDN too -->
   <script src="https://cdn.dyte.in/core/dyte-1.6.0.js"></script>
+  <link rel="stylesheet" href="./output.css" />
+  <script src="./WebrtcExampleFooter.js"></script>
+  <script src="./WebrtcExampleHeader.js"></script>
 </head>
 <body>
-  <dyte-meeting id="my-meeting"></dyte-meeting>
-
-  <script>
-    const tempToken="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmdJZCI6ImMyMmMzYTI3LWViZTItNGI5Yi1iZjIwLTFlYzdlYWFhODlmNyIsIm1lZXRpbmdJZCI6ImJiYjQ3M2E0LWY5NzctNDg0Ny04OTU1LWJlMzE4NTk3MTRhYiIsInBhcnRpY2lwYW50SWQiOiJhYWFmMTkwYi1hMDJjLTQ1YWUtOWE5MC03MGNkZWQxMjRhMjgiLCJwcmVzZXRJZCI6IjUwODI5YTc5LWI3OWMtNDQ4ZS1hNWEwLTA2NjBiNjI2ZjIyNyIsImlhdCI6MTY3ODY3ODg2MSwiZXhwIjoxNjg3MzE4ODYxfQ.Qf0_lk0daFQVdlwHkt_sfVr7EqKL859eZC1OCDpoxoXsKvQekbcMuwDMekssRUOEN5me0IYJS6lBHZq6sucDfkaZcfm3U8dTMrIQoC7t4uiRraJMsOJULFyBWOt0tTvUqsYfl64y0rNWNA9ZK-6vUPgCmI_fq3Dvtx0TeGttVZkqpqxuSbG0Soo6lZYYI-FRgPfSAKzkixvV_9ALXFKhYbpmfLuWZz_GRzIK8Y73Xn155eEMDl4HDu-fbZfIX6WkEUuC8rQobHDbduOmkzmB2VV3g-BakS7ILllTOEiihFnX1ea1gYncVW_KEFuHJiGi1snVxiAHnHjgu8s7VK8Lgw";
-    const searchParams = new URL(window.location.href).searchParams;
-    const authToken = searchParams.get('authToken')?searchParams.get('authToken'):tempToken;
-
-    const init = async () => {
-      const meeting = await DyteClient.init({
-        authToken: authToken,
-        defaults: {
-          audio: true,
-          video: true,
-        },
-      });
-
-      document.getElementById('my-meeting').meeting = meeting;
-    };
-
-    init();
-  </script>
+  <webrtc-example-header title="Dyte 예제" src="https://github.com/calmglow/webrtc-examples/blob/main/public/dyte_simple.html"/>
+  <p>사용법: <a href="https://www.postman.com/calmglow/workspace/webrtc-cpaas-api/request/26064411-f890d0f0-0124-4955-88aa-d14ae9698695">postman의 dyte api인 create Meeting</a>호출 후 <a href="https://www.postman.com/calmglow/workspace/webrtc-cpaas-api/request/26064411-747d4f37-5560-44ce-8ec9-3cd121900d5b">Add participant</a>를 통해서 authURL을 얻은 후 본 페이지의 url의 property로 authToken값을 주어서 사용하세요. (좀 어렵네요. ^^)</p>
+  <div class="relative p-10">
+    <dyte-meeting id="my-meeting" mode="fill" style="height: 480px; width: 100%"></dyte-meeting>
+  </div>
+  <script src="./dyte_simple.js"></script>
+  <webrtc-example-footer/>
 </body>
 </html>

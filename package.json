@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "parcel --dist-dir public src/mux.html",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/output.css|parcel --dist-dir public src/mux.html",
     "build": "parcel build src/mux.html --dist-dir public"
   },
   "dependencies": {
@@ -9,8 +9,11 @@
     "@vercel/edge": "^0.1.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "parcel": "^2.8.3",
+    "postcss": "^8.4.21",
     "process": "^0.11.10",
+    "tailwindcss": "^3.2.7",
     "typescript": "4.9.5"
   }
 }
