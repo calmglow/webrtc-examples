@@ -3,9 +3,9 @@ WebRTC를 기반으로 다양한 서비스들이 나옵니다. 기술 자체의 
 기술이 발전해온지 10여년이 지나다보니 이제 어느 정도 서비스들의 응용 패턴이 비슷해져가고 있습니다. 1:1 아니면 1:N(방송), 혹은 다자간 회의형 서비스들이 대부분이죠. 여기에 여러 콘텐츠들이 붙으면서 차별화가 일어나고 있습니다.
 본 프로젝트에서는 이러한 WebRTC 서비스들의 유형별로 기본이 되는 예제들을 정리합니다. 가급적 소스코드를 심플하게 유지해서 재활용하거나 이해하는데 무리가 없도록 하려 합니다. 교육용 혹은 개발 참고용으로 얼마든지 복사 및 재활용 가능합니다.
 
-# 기본
-- Simple 1 to 1
-- getUserMedia
+# 사용법
+- npm run dev 후 http://localhost:1234/index.html
+- 혹은 https://webrtc-examples.vercel.app/
 
 # CPaaS
 - Mux
@@ -13,3 +13,7 @@ WebRTC를 기반으로 다양한 서비스들이 나옵니다. 기술 자체의 
 - Mux Meet
 ## Dyte
  - Dyte simple
+## Whereby
+## EnableX
+## Daily
+
