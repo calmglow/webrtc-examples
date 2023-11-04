@@ -8,9 +8,9 @@
     <button id="startButton">Start Audio</button>
     <button id="stopButton" style="display: none;">Stop Audio</button>
     <audio id="audioPlayer" controls></audio>
-    <audio id="dummyAudio">
+    <!-- <audio id="dummyAudio" controls muted>
         <source src="assets/silent.mp3" type="audio/mpeg">
-    </audio>
+    </audio> -->
 
     <script>
         // HTML 요소 가져오기
@@ -23,9 +23,19 @@
         let intervalId = null;
 
         // 버튼 클릭 이벤트 핸들러
-        startButton.addEventListener("click", startAudio);
+        startButton.addEventListener("click", startInterval);
         stopButton.addEventListener("click", stopAudio);
 
+        async function startInterval(){
+            intervalId = window.setInterval(async () => {
+                audioStream = await navigator.mediaDevices.getUserMedia({ audio:
+                    {echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1}});
+                    audioPlayer.srcObject = audioStream;
+                audioPlayer.play();
+                startButton.style.display = "none";
+                stopButton.style.display = "block";
+            }, 30000);
+        }
         // 오디오 스트림 가져오기 및 스피커로 출력
         async function startAudio() {
             try {
@@ -38,10 +48,7 @@
                 // 스피커로 오디오 스트림 출력
                 audioPlayer.srcObject = audioStream;
                 audioPlayer.play();
-                // dummyPlayer.play();
-                intervalId = window.setInterval(function(){
-                    dummyPlayer.play();
-                }, 2000);
+                dummyPlayer.play();
 
                 // 버튼 상태 업데이트
                 startButton.style.display = "none";
