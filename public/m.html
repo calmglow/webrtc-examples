@@ -8,14 +8,19 @@
     <button id="startButton">Start Audio</button>
     <button id="stopButton" style="display: none;">Stop Audio</button>
     <audio id="audioPlayer" controls></audio>
+    <audio id="dummyAudio">
+        <source src="assets/silent.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         // HTML 요소 가져오기
         const startButton = document.getElementById("startButton");
         const stopButton = document.getElementById("stopButton");
         const audioPlayer = document.getElementById("audioPlayer");
+        const dummyPlayer = document.getElementById("dummyAudio");
 
         let audioStream = null;
+        let intervalId = null;
 
         // 버튼 클릭 이벤트 핸들러
         startButton.addEventListener("click", startAudio);
@@ -33,6 +38,10 @@
                 // 스피커로 오디오 스트림 출력
                 audioPlayer.srcObject = audioStream;
                 audioPlayer.play();
+                // dummyPlayer.play();
+                intervalId = window.setInterval(function(){
+                    dummyPlayer.play();
+                }, 2000);
 
                 // 버튼 상태 업데이트
                 startButton.style.display = "none";
@@ -47,6 +56,9 @@
             if (audioStream) {
                 audioStream.getTracks().forEach(track => track.stop());
                 audioPlayer.srcObject = null;
+            }
+            if (intervalId) {
+                window.clearInterval(intervalId);
             }
 
             // 버튼 상태 업데이트
