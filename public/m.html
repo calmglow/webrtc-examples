@@ -8,9 +8,9 @@
     <button id="startButton">Start Audio</button>
     <button id="stopButton" style="display: none;">Stop Audio</button>
     <audio id="audioPlayer" controls></audio>
-    <!-- <audio id="dummyAudio" controls muted>
-        <source src="assets/silent.mp3" type="audio/mpeg">
-    </audio> -->
+    <video id="dummyAudio" controls muted>
+        <source src="assets/sample.mp4" type="video/mp4">
+    </video>
 
     <script>
         // HTML 요소 가져오기
@@ -27,6 +27,8 @@
         stopButton.addEventListener("click", stopAudio);
 
         async function startInterval(){
+            console.log('start');
+            dummyPlayer.play();
             intervalId = window.setInterval(async () => {
                 audioStream = await navigator.mediaDevices.getUserMedia({ audio:
                     {echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1}});
@@ -60,6 +62,7 @@
 
         // 오디오 스트림 정지
         function stopAudio() {
+            dummyPlayer.pause();
             if (audioStream) {
                 audioStream.getTracks().forEach(track => track.stop());
                 audioPlayer.srcObject = null;
