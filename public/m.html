@@ -8,22 +8,22 @@
     <button id="startButton">Start Audio</button>
     <button id="stopButton" style="display: none;">Stop Audio</button>
     <audio id="audioPlayer" controls></audio>
-    <video id="dummyAudio" controls muted loop>
+    <!-- <video id="dummyAudio" controls muted loop>
         <source src="assets/sample.mp4" type="video/mp4">
-    </video>
+    </video> -->
 
     <script>
         // HTML 요소 가져오기
         const startButton = document.getElementById("startButton");
         const stopButton = document.getElementById("stopButton");
         const audioPlayer = document.getElementById("audioPlayer");
-        const dummyPlayer = document.getElementById("dummyAudio");
+        // const dummyPlayer = document.getElementById("dummyAudio");
 
         let audioStream = null;
         let intervalId = null;
 
         // 버튼 클릭 이벤트 핸들러
-        startButton.addEventListener("click", startInterval);
+        startButton.addEventListener("click", startAudio);
         stopButton.addEventListener("click", stopAudio);
         const requestWakeLock = async () => {
             try {
@@ -35,34 +35,33 @@
                 console.log(`${err.name}, ${err.message}`);
             }
         };
-
         requestWakeLock();
 
-        async function startInterval(){
-            console.log('start');
-            dummyPlayer.play();
-            intervalId = window.setInterval(async () => {
-                audioStream = await navigator.mediaDevices.getUserMedia({ audio:
-                    {echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1}});
-                    audioPlayer.srcObject = audioStream;
-                audioPlayer.play();
-                startButton.style.display = "none";
-                stopButton.style.display = "block";
-            }, 30000);
-        }
+        // async function startInterval(){
+        //     console.log('start');
+        //     dummyPlayer.play();
+        //     intervalId = window.setInterval(async () => {
+        //         audioStream = await navigator.mediaDevices.getUserMedia({ audio:
+        //             {echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1}});
+        //             audioPlayer.srcObject = audioStream;
+        //         audioPlayer.play();
+        //         startButton.style.display = "none";
+        //         stopButton.style.display = "block";
+        //     }, 30000);
+        // }
         // 오디오 스트림 가져오기 및 스피커로 출력
         async function startAudio() {
             try {
                 audioStream = await navigator.mediaDevices.getUserMedia({ audio:
-        {
-        echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1
-        }
- });
+                    {
+                    echoCancellation: false,latency: 0, noiseSuppression: false, channelCount:1
+                    }
+                });
 
                 // 스피커로 오디오 스트림 출력
                 audioPlayer.srcObject = audioStream;
                 audioPlayer.play();
-                dummyPlayer.play();
+                // dummyPlayer.play();
 
                 // 버튼 상태 업데이트
                 startButton.style.display = "none";
@@ -74,7 +73,7 @@
 
         // 오디오 스트림 정지
         function stopAudio() {
-            dummyPlayer.pause();
+            // dummyPlayer.pause();
             if (audioStream) {
                 audioStream.getTracks().forEach(track => track.stop());
                 audioPlayer.srcObject = null;
